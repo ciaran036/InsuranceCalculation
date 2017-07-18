@@ -8,6 +8,12 @@ namespace InsuranceCalculation
     {
         public const int StartingPoint = 500;
 
+        /// <summary>
+        /// Calculate an insurance premium according to supplied information
+        /// </summary>
+        /// <param name="policyStartDate"></param>
+        /// <param name="drivers"></param>
+        /// <returns></returns>
         public static int Calculate(DateTime policyStartDate, IEnumerable<Driver> drivers)
         {
             var premium = StartingPoint;
@@ -66,6 +72,11 @@ namespace InsuranceCalculation
             }
         }
 
+        /// <summary>
+        /// Apply calculation rules according to driver occupation
+        /// </summary>
+        /// <param name="premium"></param>
+        /// <param name="drivers"></param>
         private static void driverOccupationRules(ref int premium, IEnumerable<Driver> drivers)
         {
             chauffeurRule(ref premium, drivers);
